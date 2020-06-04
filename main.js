@@ -8,10 +8,12 @@ var tokyoRelease = function(){
 
 var trigger = function(){
 	state = true
+	document.bgColor = "red";
 	tokyoAlert()
 }
 
 var end = function(){
 	state = false
+	document.bgColor = "white";
 	tokyoRelease()
 }
