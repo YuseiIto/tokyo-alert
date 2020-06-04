@@ -1,7 +1,12 @@
 var tokyoAlert = function() {
-    alert("東京")
+    window.alert("東京")
 }
 
-function trigger(){
+var trigger = function(){
+	state = true
 	tokyoAlert()
+}
+
+var end = function(){
+	state = false
 }
