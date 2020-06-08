@@ -4,7 +4,7 @@ const tokyoAlert = function () {
   window.alert("東京");
 };
 
-const tokyoRelease = function () {
+const releaseTokyo = function () {
   window.alert("解除");
 };
 
@@ -18,5 +18,5 @@ const end = function () {
   document.body.style.backgroundColor = "white";
   clearInterval(intervalId);
   intervalId = null;
-  tokyoRelease();
+  releaseTokyo();
 };
