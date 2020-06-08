@@ -1,20 +1,22 @@
-var tokyoAlert = function () {
+let state = false;
+
+const tokyoAlert = function () {
   if (state) {
     window.alert("東京");
   }
 };
 
-var tokyoRelease = function () {
+const tokyoRelease = function () {
   window.alert("解除");
 };
 
-var trigger = function () {
+const trigger = function () {
   state = true;
   document.body.style.backgroundColor = "red";
   tokyoAlert();
 };
 
-var end = function () {
+const end = function () {
   state = false;
   document.body.style.backgroundColor = "white";
   tokyoRelease();
