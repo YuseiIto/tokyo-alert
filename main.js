@@ -1,9 +1,7 @@
-let state = false;
+let intervalId = null;
 
 const tokyoAlert = function () {
-  if (state) {
-    window.alert("東京");
-  }
+  window.alert("東京");
 };
 
 const tokyoRelease = function () {
@@ -11,17 +9,14 @@ const tokyoRelease = function () {
 };
 
 const trigger = function () {
-  state = true;
   document.body.style.backgroundColor = "red";
   tokyoAlert();
+  intervalId = setInterval(tokyoAlert, 1500);
 };
 
 const end = function () {
-  state = false;
   document.body.style.backgroundColor = "white";
+  clearInterval(intervalId);
+  intervalId = null;
   tokyoRelease();
-};
-
-window.onload = function () {
-  setInterval(tokyoAlert, 1500);
 };
