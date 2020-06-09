@@ -1,25 +1,22 @@
-var tokyoAlert = function() {
-	if (state){
-        window.alert("東京")
-	}
-}
+let intervalId = null;
 
-var tokyoRelease = function(){
-	window.alert("解除")
-}
+const tokyoAlert = function () {
+  window.alert("東京");
+};
 
-var trigger = function(){
-	state = true
-	document.bgColor = "red";
-	tokyoAlert()
-}
+const releaseTokyo = function () {
+  window.alert("解除");
+};
 
-var end = function(){
-	state = false
-	document.bgColor = "white";
-	tokyoRelease()
-}
+const trigger = function () {
+  document.body.style.backgroundColor = "red";
+  tokyoAlert();
+  intervalId = setInterval(tokyoAlert, 1500);
+};
 
-window.onload = function(){
-	setInterval(tokyoAlert,1500)
-}
+const end = function () {
+  document.body.style.backgroundColor = "white";
+  clearInterval(intervalId);
+  intervalId = null;
+  releaseTokyo();
+};
