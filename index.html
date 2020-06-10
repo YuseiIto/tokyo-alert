@@ -1,12 +1,125 @@
 <!doctype html>
 
 <head>
-    <meta charset="utf-8">
-    <script type="text/javascript" src="main.js"></script>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="main.js"></script>
 </head>
 
+<style>
+        html {
+                height: 100%;
+        }
 
-<body id="body">
-	<p><input type="button" value="発動" onClick="trigger()"></p>
-	<p><input type="button" value="解除" onClick="end()"</p>
+        h1 {
+                font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', helvetica, sans-serif;
+                font-size: 10.5vw;
+                margin-bottom: 0;
+                text-align: center;
+        }
+
+        p {
+                margin: 20px;
+                font-weight: bold;
+                font-size: 30px;
+        }
+
+
+
+        .box1 {
+
+                width: -webki-calc(100% - 12vw);
+                width: calc(100% - 12vw);
+                height: -webki-calc(100% - 12vw);
+                height: calc(100% - 12vw);
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+
+
+                outline: solid 1vw #000;
+                outline-offset: 1vw;
+        }
+
+        .state1 div {
+                background-color: red;
+                background-image: none;
+        }
+
+        .state1 {
+                background-image: linear-gradient(-45deg,
+                                #ff0000 25%,
+                                #000 25%, #000 50%,
+                                #ff0000 50%, #ff0000 75%,
+                                #000 75%, #000);
+                background-size: 5vw 5vw;
+        }
+
+        .state1 button {
+                color: #ff0000;
+                border: 2px solid #ff0000;
+        }
+
+        .state1 .button:hover {
+                box-shadow: none;
+                color: red;
+                background: #9e0000;
+        }
+
+        .state2 {
+                background-color: chartreuse;
+                background-size: 5vw 5vw;
+        }
+
+        .state2 div {
+                background-color: chartreuse;
+                background-image: none;
+        }
+
+        .state1 .button {
+                color: red;
+                border: 2px solid red;
+        }
+
+        .state2 .button {
+                color: chartreuse;
+                border: 2px solid chartreuse;
+        }
+
+        .state2 .button:hover {
+                box-shadow: none;
+                color: chartreuse;
+                background: #328a00;
+        }
+
+
+
+
+
+        .button {
+                display: inline-block;
+                font-size: 3vw;
+                text-align: center;
+                cursor: pointer;
+                padding: 12px 12px;
+                background: #000;
+
+                line-height: 1em;
+                transition: .3s;
+                box-shadow: 1px 1px 3px #666666;
+
+        }
+</style>
+
+<body id="body" class="state2">
+        <div class=" box1">
+                <h1>東京アラート発動</h1>
+                <p>「1週間平均の新規陽性者（1日20人未満）」「1週間平均の接触歴等不明率（50％未満）」「週単位の陽性者増加比（1未満）」を目安に発動します。</p>
+                <div style="float: right; margin: 20px; font-size: 20px;">
+                        <input class="button" type="button" value="　解除　" onClick="end()">
+                        <input class="button" type="button" value="　発動　" onClick="trigger()">
+                </div>
+        </div>
 </body>
